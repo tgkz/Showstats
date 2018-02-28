@@ -1,4 +1,34 @@
 # IMPORTANT: This README is still underconstruction, some parts are incorrect and some parts are not yet implemented
+
+# Showstats
+Showstats is the set of scripts to see statistics of the specified Git Repository
+
+## Geting Started
+
+### Preresuesties
+
+You need to download the Git repository/repositories into your machine that you wanted to see its statistics.
+In case of Kubernates;
+
+```
+$ cd $HOME
+$ mkdir projects
+$ cd projects
+$ git clone https://github.com/kubernetes/kubernetes
+```
+Note that we have kubernetes git repo in $HOME/projects/kubernetes
+
+### Installing
+Download latest showstats source fils and install in to you specific directory and then add it to the PATH environment variable.
+
+```
+$ cd $HOME
+$ mkdir toolbin
+$ cd toolbin
+$ git clone https://SHOWSTATS's git hub URL
+$ PATH=$PATH:$PWD
+```
+
 ----
 Showstats is an set of scripts that will shown specific Git repository.
 You will be able to see -
