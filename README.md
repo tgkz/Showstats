@@ -2,7 +2,7 @@
 
 # Showstats
 Showstats is the set of scripts to see statistics of the specified Git Repository  
-- You will be able to see -  
+You will be able to see -  
 - How many of contributors in the specifc version  
 - How many commits were merged  
 - How many number of commits from email domains, that means how many companies were participated  
