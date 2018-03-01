@@ -1,11 +1,11 @@
 # IMPORTANT: This README is still underconstruction, some parts are incorrect and some parts are not yet implemented
 
 # Showstats
-Showstats is the set of scripts to see statistics of the specified Git Repository
-You will be able to see -  
-How many of contributors in the specifc version  
-How many commits were merged  
-How many number of commits from email domains, that means how many companies were participated  
+Showstats is the set of scripts to see statistics of the specified Git Repository  
+- You will be able to see -  
+- How many of contributors in the specifc version  
+- How many commits were merged  
+- How many number of commits from email domains, that means how many companies were participated  
 All those informations will be shown in the each indiviual release.  
 
 Note: Release recognized as release-tag in git repository  
@@ -14,7 +14,7 @@ Note: Release recognized as release-tag in git repository
 
 ### Preresuesties
 
-You need to download the Git repository/repositories into your machine that you wanted to see its statistics.
+You need to download the Git repository/repositories you wanted to see its statistics into your local environment.  
 In case of Kubernates;
 
 ```
@@ -26,13 +26,13 @@ $ git clone https://github.com/kubernetes/kubernetes
 Note that we have kubernetes git repo in $HOME/projects/kubernetes
 
 ### Installing
-Download latest showstats source fils and install in to you specific directory and then add it to the PATH environment variable.
+Download latest showstats source fils and install into you specific directory and then add it to the PATH environment variable.
 
 ```
 $ cd $HOME
 $ mkdir toolbin
 $ cd toolbin
-$ git clone https://SHOWSTATS's git hub URL
+$ git clone https://github.com/tgkzsh/Showstats
 $ PATH=$PATH:$PWD
 ```
 
