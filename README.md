@@ -42,26 +42,7 @@ $ cd CNCF
 $ git clone https://kubernetes git repo
 
 
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
 
-
-
-### To start using 
-
-E
-Create your own directory and go there. Showstats output the report to STDOUT so that you are easy to put it into the file with ">" 
+### To start using showstats
 
 
