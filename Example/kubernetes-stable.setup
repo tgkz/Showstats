@@ -1,0 +1,7 @@
+# HyperLedger-fablic setup file
+PROJECT="CNCF/Kubernates"
+GITREPO=$HOME/Projects/CNCF/kubernetes
+YEARS_TOBE_SHOWN=2
+VERSION_TAG_FILTER='v[0-9]*\.[0-9]*\.[0-9]*'
+VERSION_TAG_UNFILTER='\-'
+

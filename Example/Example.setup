@@ -1,0 +1,22 @@
+# Example of setup file
+# this file show you some example of how to write setup files
+#
+# PROJECT is used for header of the report
+PROJECT="CNCF/Kubernates"
+# GITREPO is the specific git directory, you need to refresh git repo 
+#  by (sometimes change branch and) git pull
+GITREPO=$HOME/Projects/CNCF/kubernetes
+# VERSION_TAG_FILTER is expression of grep command for filter as below: 
+#  git tag -l | grep $VERSION_TAG_FILTER
+# some example of the filters are :
+#   'v1.23.456', 'v[0-9]*\.[0-9]*\.[0-9]*'
+#   'v1.23.0'    'v[0-9]*\.[0-9]*\.0'     this means no bug fixed version
+VERSION_TAG_FILTER='v[0-9]*\.[0-9]*\.[0-9]*'
+# VERSION_TAG_UNFILTER is expression of grep -v command after 
+#  VERSION_TAG_FILTER. This is usefull to cut out the tag which is
+#  not interesting 
+# some example of the un-filers are:
+#   '-'        version tag include '-' is ommitted, like '-test'
+#   'rc'       version tag include 'rc' is ommitted, like 'rc2'
+#   if this variable not defined, no unfilter happend 
+VERSION_TAG_UNFILTER='\-'
