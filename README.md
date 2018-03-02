@@ -48,6 +48,7 @@ $ mkdir showstats
 $ cd showstats
 $ cp $HOME/toolbin/Example/* .
 $ vi Example.setup
+```
 
 ## Running 
 
