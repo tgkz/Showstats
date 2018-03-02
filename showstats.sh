@@ -16,7 +16,7 @@ source  $1   # include specific values
 echo -e "Project: " $PROJECT
 echo -e "GITREPO: " $GITREPO
 echo -ne "Date: "; date
-echo -e "Version" " " "Date" "\t" "#committer" "\t" "commits   domain"
+echo -e "Version" " " "Date\t\t#cmiter\t#cmits\t#domain"
 # start version report
 dir=$GITREPO
 cd $dir
