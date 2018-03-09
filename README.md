@@ -30,7 +30,8 @@ Download latest showstats source fils and install into you specific directory an
 $ cd $HOME
 $ mkdir toolbin
 $ cd toolbin
-$ git clone https://github.com/tgkz/Showstats
+$ git clone https://tgkz.github.io/Showstats/
+
 $ PATH=$PATH:$PWD
 ```
 
