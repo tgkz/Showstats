@@ -1,5 +1,3 @@
-# IMPORTANT: This README is still underconstruction, some parts are incorrect and some parts are not yet implemented
-
 # Showstats
 Showstats is the set of scripts to see statistics of the specified Git Repository  
 You will be able to see -  
@@ -32,7 +30,7 @@ Download latest showstats source fils and install into you specific directory an
 $ cd $HOME
 $ mkdir toolbin
 $ cd toolbin
-$ git clone https://github.com/tgkzsh/Showstats
+$ git clone https://github.com/tgkz/Showstats
 $ PATH=$PATH:$PWD
 ```
 
