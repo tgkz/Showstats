@@ -24,25 +24,22 @@ def edaddress(eaddress):
     #email = name+'@'+dom
     return domain
 
-def itemreport(domain):
-    # print number of commiter 
-    item = domlist[domain]
-    commiter = len(item)
-    #print domain, " ", commiter, " ",
-    numcommits = 0
+def countcommits(domainname):
+    # return number of commiter, num of commits for a domainname 
+    item = domlist[domainname]
+    ncommiter = len(item)
+    numcommits = 0  # for this domainname
     for i in item:
        numcommits = numcommits + i
-    # print number of commits by this email domain
-    #print " ", numcommits
-    return (commiter, numcommits)
+    return (ncommiter, numcommits)
 
 def summary(domlist):
     numdoms = 0
     commiter = 0
     commitcnt = 0
-    for k in domlist.keys():
+    for domainname in domlist.keys():
         numdoms = numdoms + 1
-        (cmter, cmtcnt) = itemreport(k)
+        (cmter, cmtcnt) = countcommits(domainname)
         commiter = commiter + cmter
         commitcnt = commitcnt + cmtcnt
     #print
