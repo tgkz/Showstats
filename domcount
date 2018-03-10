@@ -8,21 +8,21 @@
 domlist = {}  # we will use dictinary
 
 
-def edaddress(eaddress):
-    # edit email address with cut middle domain name
-    if eaddress == "<>":
-	return eaddress
-    ns=eaddress.split('@')
-    name = ns[0]
+def getdomainname(eaddr):
+    # get domain name from email address 
+    if eaddr== "<>":
+	return eaddr
+    ns=eaddr.split('@')  # <name@xx.yy.zz.domain>
+    #name = ns[0]
     if len(ns) <= 1:
-        return eaddress     # we have no domain name in email
+        return eaddr     # we have no domain name in email
     dn = ns[1].split('.')
     l = len(dn)
-    lastwd = dn[l-1]
+    lastwd = dn[l-1]     # last one is domain namae
     fixlwd = lastwd[:len(lastwd)-1]  # cut last char ">"
-    domain = dn[l-2]+'.'+ fixlwd
+    domainname = dn[l-2]+'.'+ fixlwd
     #email = name+'@'+dom
-    return domain
+    return domainname
 
 def countcommits(domainname):
     # return number of commiter, num of commits for a domainname 
@@ -62,13 +62,13 @@ if __name__ == "__main__":
         if (i == 0):
            commitnum = int(field[i]),
            #print '%5d' % commitnum,
-      domain = edaddress(field[l-1])
+      domainname = getdomainname(field[l-1])
       #print domain
-      if (domain in domlist):
-           last = domlist[domain]
-           domlist[domain] = last + commitnum
+      if (domainname in domlist):
+           last = domlist[domainname]
+           domlist[domainname] = last + commitnum
       else:
-           domlist[domain] = commitnum
+           domlist[domainname] = commitnum
 
   #print domlist
   #print "SUMMARY"
