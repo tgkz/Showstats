@@ -3,14 +3,17 @@
 # usage: showstats setupfile
 # ex. showstats hyperledger.setup
 # default variable setup
-GITREPO=NULL
-YEARS_TO_SHOWN=1
+GITREPO=""
+GITDIR="./"  # default is current
+#YEARS_TO_SHOWN=1
 VERSION_TAG_FILER="*"
 if [ $# -eq 0 ] ; then
    echo "No setup file specified"
    exit 1
 fi
 source  $1   # include specific values
+set $@=`grep https $GITDIR/.git/config`
+GITREPO=$4
 
 # printe headers
 echo -e "Project: " $PROJECT
