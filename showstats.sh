@@ -27,7 +27,17 @@ if [ "$VERSION_TAG_UNFILTER" != "" ]; then
 else
     ver=`git tag -l  |grep $VERSION_TAG_FILTER| sort -r --version-sort `
 fi
-for i in  $ver
+# we create from-version-tag..to-version-tag with list from $ver
+set $ver ; shift ; from=$@   # remove 1st item and stro to $from
+set $ver # to refere as $1 in loop
+verlist=""
+for f in $from
+do 
+  verlist="$verlist $f..$1"
+  shift
+done
+# end of making version..version list
+for i in  $verlist
 do
   echo  -n $i " "
   set `git log -1 --pretty=format:%ai $i`; echo -ne $1 '\t' #print tag and date
