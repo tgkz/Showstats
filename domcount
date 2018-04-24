@@ -1,11 +1,24 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # domain wise count for committer and committed domain 
+# this will print outs;
+#  Number of commiters, number of commits, number of domains
 # note: we must user git shortlog -sne
 # git shortlog -sn is not goog because of we are not identify same name but different domain
-
+# when -d parameter, we can use 
+#  sort -rnk 1 : sort by commiter 
+#  sort -rnk 2 : sort by number of commits
 
 domlist = {}  # we will use dictinary
+
+def parsearg():
+    # parse arguments: 
+    import argparse
+    parser = argparse.ArgumentParser(prog='domcount')
+    parser.add_argument("-d", help='Detaild, each domain name and its commit count will be shown', action='store_true')
+    parser.add_argument("-s", help='Summary will be shown', action='store_true')
+    args = parser.parse_args()
+    return args
 
 
 def getdomainname(eaddr):
@@ -24,28 +37,33 @@ def getdomainname(eaddr):
     #email = name+'@'+dom
     return domainname
 
-def countcommits(domainname):
+def countcommits(domainname, detaillist):
     # return number of commiter, num of commits for a domainname 
     item = domlist[domainname]
     ncommiter = len(item)
     numcommits = 0  # for this domainname
     for i in item:
        numcommits = numcommits + i
+    if detaillist :
+        # print detailed list
+        print ncommiter, " ", numcommits, " ", domainname
     return (ncommiter, numcommits)
 
-def summary(domlist):
+def summary(domlist, detaillist, summarylist):
     numdoms = 0
     commiter = 0
     commitcnt = 0
     for domainname in domlist.keys():
         numdoms = numdoms + 1
-        (cmter, cmtcnt) = countcommits(domainname)
+        (cmter, cmtcnt) = countcommits(domainname, detaillist)
         commiter = commiter + cmter
         commitcnt = commitcnt + cmtcnt
-    #print
-    #print "Total numcommiters: ", commiter, " numcommits: ", commitcnt,
-    print  commiter, "\t", commitcnt, "\t", numdoms,  
-    #print "Numdomains:", numdoms  
+    # print summary and also simple 
+    if summarylist :
+        print "Total Commiter:", commiter, " Number of Commits:", commitcnt,
+        print "Numdomains:", numdoms  
+    elif not detaillist :
+        print  commiter, "\t", commitcnt, "\t", numdoms,  
 
 
 
@@ -55,15 +73,18 @@ if __name__ == "__main__":
   # git sortlog -s -n -e 
   # will come 
   #domlist = {}  # we will use dictinary
+  args = parsearg()
   for line in sys.stdin:
       field = line.split()
       l = len(field)
       for i in range(0, l-1):
         if (i == 0):
            commitnum = int(field[i]),
-           #print '%5d' % commitnum,
+           #if args.d :   # -d specified
+           #    print '%5d' % commitnum,
       domainname = getdomainname(field[l-1])
-      #print domain
+      #if args.d :
+      #    print domainname
       if (domainname in domlist):
            last = domlist[domainname]
            domlist[domainname] = last + commitnum
@@ -72,5 +93,5 @@ if __name__ == "__main__":
 
   #print domlist
   #print "SUMMARY"
-  summary(domlist)
+  summary(domlist, args.d, args.s)
 
