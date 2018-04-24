@@ -12,6 +12,11 @@ if [ $# -eq 0 ] ; then
    exit 1
 fi
 source  $1   # include specific values
+if [ $GITDIR = "./" ]; then
+    echo "WARING: setup file may not specify GITDIR"
+    exit 1
+fi 
+ 
 set $@=`grep https $GITDIR/.git/config`
 GITREPO=$4
 
