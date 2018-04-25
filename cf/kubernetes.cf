@@ -1,4 +1,4 @@
-# HyperLedger-fablic setup file
+# HyperLedger-fablic configuration file
 PROJECT="CNCF/Kubernates stable"
 GITDIR=$HOME/Projects/CNCF/kubernetes
 VERSION_TAG_FILTER='v[0-9]*\.[0-9]*\.0'

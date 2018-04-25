@@ -1,0 +1,7 @@
+# HyperLedger-fablic configuration file
+PROJECT="HyperLedger/fabric"
+GITDIR=$HOME/Projects/hyperledger/fabric
+YEARS_TOBE_SHOWN=2
+VERSION_TAG_FILTER='v[0-9]*\.[0-9]*\.[0-9]*'
+#VERSION_TAG_FILTER='v[0-9]*\.[0-9]*\.0'
+VERSION_TAG_UNFILTER='\-'

@@ -1,13 +1,13 @@
 #!/bin/bash
 # version tag tester
-# usage: versiotagtest setupfile
+# usage: versiotagtest configuration file
 
-# default variable setup
+# default variable 
 GITREPO=NULL
 YEARS_TO_SHOWN=1
 VERSION_TAG_FILER="*"
 if [ $# -eq 0 ] ; then
-   echo "No setup file specified"
+   echo "No configuration file specified"
    exit 1
 fi
 source  $1   # include specific values

@@ -1,19 +1,19 @@
 #!/bin/bash
 # print statistics for specific Gitrep
-# usage: showstats setupfile
-# ex. showstats hyperledger.setup
-# default variable setup
+# usage: showstats cf-file
+#
+# ex. showstats hyperledger.cf
+
 GITREPO=""
 GITDIR="./"  # default is current
-#YEARS_TO_SHOWN=1
 VERSION_TAG_FILER="*"
 if [ $# -eq 0 ] ; then
-   echo "No setup file specified"
+   echo "No config file specified"
    exit 1
 fi
-source  $1   # include specific values
+source  $1   # include configration file to get specific values
 if [ $GITDIR = "./" ]; then
-    echo "WARING: setup file may not specify GITDIR"
+    echo "WARING: configration file may not specify GITDIR in " $1
     exit 1
 fi 
  

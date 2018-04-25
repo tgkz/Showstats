@@ -1,12 +1,13 @@
 # Showstats
 Showstats is the set of scripts to see statistics of the specified Git Repository  
-You will be able to see -  
-- How many of contributors in the specifc version  
-- How many commits were merged  
-- How many number of commits from email domains, that means how many companies were participated  
-All those informations will be shown in the each indiviual release.  
+You will be able to see How many of -  
+- Contributors in the specifc version  
+- Commits were merged  
+- Number of commits from each companies
 
-Note: Release recognized as release-tag in git repository  
+All those informations will be shown in the each release.  
+
+Note: "Release" recognized as release-tag in git repository  
 
 ## Geting Started
 
@@ -38,21 +39,21 @@ $ PATH=$PATH:$PWD
 
 ### Prepare using showstats
 
-Showstats need setupfile that includes path of Git repository and filtering specifications.  
-Number of real examples are located at ./Example directory so that you are easy to use them. Also ./Exmaple/Example.setup includes more detailed descriptions about each of variables.  
+Showstats need configuration file that includes path of Git repository and filtering specifications.  
+Number of real examples are located at ./cf directory so that you are easy to use them. Also ./cf/Example.cf includes more detailed descriptions about each of variables.  
 
 ```
 $ cd $HOME
 $ mkdir showstats
 $ cd showstats
-$ cp $HOME/toolbin/Example/* .
-$ vi Example.setup
+$ cp $HOME/toolbin/cf/* .
+$ vi Example.cf
 ```
 
 ## Running 
 
-We have kubernetes setup file in the Example directory.  
+We have kubernetes cf file in the cf directory.  
 ```
-$ showstats kubernetes-stable.setup
+$ showstats kubernetes-stable.cf
 ```
 

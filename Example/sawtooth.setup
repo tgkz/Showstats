@@ -1,6 +1,0 @@
-# HyperLedger-fablic setup file
-PROJECT="HyperLedger/sawtooth-core"
-GITREPO=$HOME/Projects/hyperledger/sawtooth-core
-YEARS_TOBE_SHOWN=2
-VERSION_TAG_FILTER='v[0-9]*\.[0-9]*\.[0-9]*'
-VERSION_TAG_UNFILTER='rc'
